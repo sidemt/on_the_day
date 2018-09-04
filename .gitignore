@@ -24,3 +24,6 @@
 
 # Ignore files to store environment variables.
 .env
+
+# Ignore Spring files.
+/spring/*.pid
