@@ -30,6 +30,11 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Use Twitter API
+gem 'rest-client'
+gem 'twitter'
+gem 'twurl'
+
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
@@ -52,6 +57,8 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   # RuboCop
   gem 'rubocop', '~> 0.58.2', require: false
+  # Store sensitive information in environment variables
+  gem 'dotenv-rails'
 end
 
 group :test do
