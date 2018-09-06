@@ -10,6 +10,7 @@ AllCops:
     - 'script/**/*'
     - 'bin/{rails,rake,setup,update}'
     - !ruby/regexp /old_and_unused\.rb$/
+    - 'Guardfile'
 Rails:
   Enabled: true
   
