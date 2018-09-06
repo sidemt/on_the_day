@@ -1,5 +1,4 @@
 class Tweet
-  
   # Configures consumer key/secret pair and OAuth access token/secret pair
   def authenticate
     client = Twitter::REST::Client.new do |config|
@@ -8,7 +7,7 @@ class Tweet
       config.access_token        = ENV['ACCESS_TOKEN']
       config.access_token_secret = ENV['ACCESS_TOKEN_SECRET']
     end
-    client
+    return client
   end
 
   # Returns tweet IDs of the search results
@@ -21,6 +20,6 @@ class Tweet
       results.push(tweet.id)
     end
 
-    results
+    return results
   end
 end
