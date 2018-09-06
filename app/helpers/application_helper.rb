@@ -8,4 +8,9 @@ module ApplicationHelper
       base_title + ' | ' + page_title
     end
   end
+  
+  def get_tweet_id
+    tw = Tweet.new
+    tw.search_tweets
+  end
 end
