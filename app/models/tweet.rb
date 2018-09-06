@@ -1,4 +1,8 @@
 class Tweet
+  def initialize(day)
+    @day = day
+  end
+
   # Configures consumer key/secret pair and OAuth access token/secret pair
   def authenticate
     client = Twitter::REST::Client.new do |config|
@@ -15,8 +19,9 @@ class Tweet
     results = []
     client = authenticate
 
-    client.search('100DaysOfCode Day1', result_type: 'recent')
-          .take(5).each do |tweet|
+    # Search tweets using 'twitter' gem
+    client.search('100DaysOfCode -rt Day' + @day.to_s, result_type: 'recent')
+          .take(3).each do |tweet|
       results.push(tweet.id)
     end
 
