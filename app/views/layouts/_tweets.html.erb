@@ -1,0 +1,5 @@
+<% ids = get_tweet_id(@day) %>
+
+<% ids.each do |id| %>
+  <%= get_snippet(id).html_safe %>
+<% end %>
