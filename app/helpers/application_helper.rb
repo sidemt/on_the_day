@@ -18,8 +18,8 @@ module ApplicationHelper
   # Returns HTML snippet to embed the tweet of the given tweet ID
   def get_snippet(id)
     # Make an API call using 'rest-client' gem
-    target_url = 'https://publish.twitter.com/oembed?
-                  url=https%3a%2f%2ftwitter%2ecom%2fInterior%2fstatus%2f' +
+    target_url = 'https://publish.twitter.com/oembed?' \
+                 'url=https%3a%2f%2ftwitter%2ecom%2fInterior%2fstatus%2f' +
                  id.to_s + '&omit_script=true'
     response = RestClient::Request.execute(
       method: :get,

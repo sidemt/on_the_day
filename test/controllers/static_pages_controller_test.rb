@@ -15,4 +15,10 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_select 'title', @base_title.to_s
   end
+
+  test 'should get search' do
+    get static_pages_search_url
+    assert_response :success
+    assert_select 'title', @base_title.to_s
+  end
 end

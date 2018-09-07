@@ -1,12 +1,1 @@
-<h1>On The Day</h1>
-<p>Find people who are on the same day of #100DaysOfCode</p>
-
-<div>
-  <!-- Search for tweets of Day1 (as for now) -->
-  <% ids = get_tweet_id(1) %>
-  
-  <!-- embed tweets --->
-  <% ids.each do |id| %>
-    <%= get_snippet(id).html_safe %>
-  <% end %>
-</div>
+<%= render 'layouts/day_form' %>

@@ -1,0 +1,7 @@
+<div>
+  <%= form_tag(url_for(:action => 'search')) do %>
+
+    <%= select_tag :day, options_for_select((0..100), @day) %>
+    <%= submit_tag 'Search Tweets' %>
+  <% end %>
+</div>
