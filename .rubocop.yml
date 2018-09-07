@@ -10,9 +10,18 @@ AllCops:
     - 'script/**/*'
     - 'bin/{rails,rake,setup,update}'
     - !ruby/regexp /old_and_unused\.rb$/
+    - 'Guardfile'
 Rails:
   Enabled: true
   
 # Disable "Missing top-level class documentation comment."
 Style/Documentation:
+  Enabled: false
+
+# Disable "Redundant return detected."
+Style/RedundantReturn:
+  Enabled: false
+
+# Disable "Do not prefix reader method names with get_."
+Naming/AccessorMethodName:
   Enabled: false

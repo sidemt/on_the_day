@@ -18,6 +18,8 @@ gem 'uglifier', '>= 1.3.0'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
+# Jquery
+gem 'jquery-rails', '4.3.1'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -33,7 +35,6 @@ gem 'jbuilder', '~> 2.5'
 # Use Twitter API
 gem 'rest-client'
 gem 'twitter'
-gem 'twurl'
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record
@@ -44,6 +45,8 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   # gem 'capybara', '~> 2.13'
   # gem 'selenium-webdriver'
+  # Store sensitive information in environment variables
+  gem 'dotenv-rails'
 end
 
 group :development do
@@ -57,8 +60,6 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   # RuboCop
   gem 'rubocop', '~> 0.58.2', require: false
-  # Store sensitive information in environment variables
-  gem 'dotenv-rails'
 end
 
 group :test do
