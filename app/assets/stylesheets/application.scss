@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+@import "bootswatch/materia/variables";
+@import "bootstrap";
+@import "bootswatch/materia/bootswatch";
+
+
+body {
+  /* Note: padding-top: 60px; is for Bootstrap fixed navbar */
+  padding: 60px;
+}
