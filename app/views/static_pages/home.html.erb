@@ -1,1 +1,7 @@
 <%= render 'layouts/day_form' %>
+
+<% if !@day.nil? %>
+  <div id="search-results">
+    <%= render 'layouts/tweets' %>
+  </div>
+<% end %>
