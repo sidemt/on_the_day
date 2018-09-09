@@ -1,0 +1,82 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import 'bootswatch/materia/variables';
+@import 'bootstrap';
+@import 'bootswatch/materia/bootswatch';
+
+
+body {
+  // Note: padding-top: 60px; is for Bootstrap fixed navbar
+  padding: 60px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.lead {
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+#day-form-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+#day-select-container {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: center;
+  width: 100%;
+}
+
+#im-on {
+  min-width: 50%;
+  padding: .5rem;
+  text-align: center;
+}
+
+#btn-search {
+  // Show block level button on mobile devices
+  display: block;
+  margin: .5rem 0;
+  width: 100%;
+}
+
+#search-results {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  text-align: center;
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .form-group {
+    margin: auto;
+    width: 500px;
+  }
+}

@@ -1,7 +1,13 @@
-<div>
-  <%= form_tag(url_for(:action => 'search')) do %>
+<div class="form-group">
+  <%= form_tag(url_for(:action => 'home'), :id => 'day-form-container') do %>
 
-    <%= select_tag :day, options_for_select((0..100), @day) %>
-    <%= submit_tag 'Search Tweets' %>
+    <div id="day-select-container">
+      <div id="im-on">I'm on Day</div>
+      <%= select_tag :day, options_for_select((0..100), @day),
+                           :id => 'select-day',
+                           :class => 'custom-select' %>
+    </div>
+    <%= submit_tag 'Search Tweets', :id => 'btn-search',
+                                    :class => 'btn btn-primary' %>
   <% end %>
 </div>

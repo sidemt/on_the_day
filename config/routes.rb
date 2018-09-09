@@ -1,6 +1,3 @@
 Rails.application.routes.draw do
-  root 'static_pages#home'
-  get 'static_pages/home'
-  get 'static_pages/search'
-  post 'static_pages/search'
+  root 'static_pages#home', via: [:get, :post]
 end
