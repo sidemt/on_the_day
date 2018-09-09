@@ -26,11 +26,10 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
   
-  # Mailer setting to use devise
-  config.action_mailer.default_url_options = { host: 'rails-tutorial-sidemt.c9users.io', port: 3000 }
-
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
+  # Mailer setting to use devise
+  config.action_mailer.default_url_options = { host: 'rails-tutorial-sidemt.c9users.io' }
 
   config.action_mailer.perform_caching = false
 
