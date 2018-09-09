@@ -21,7 +21,7 @@ class Tweet
 
     # Search tweets using 'twitter' gem
     client.search('100DaysOfCode -rt Day' + @day.to_s, result_type: 'recent')
-          .take(3).each do |tweet|
+          .take(5).each do |tweet|
       results.push(tweet.id)
     end
 

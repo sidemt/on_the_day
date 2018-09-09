@@ -6,15 +6,15 @@ class HomeTest < ActionDispatch::IntegrationTest
     get root_url
     assert_select '#search-results', 0
   end
-  
+
   # Verify that tweets are displayed when user selects the Day
   test 'should show tweets' do
     post root_url, params: { day: 1 }
     assert_select '#search-results', 1
-    # 3 Tweets should be displayed
-    assert_select '.twitter-tweet', 3
+    # 5 Tweets should be displayed
+    assert_select '.twitter-tweet', 5
   end
-  
+
   # Verify that tweets are displayed when user selects Day 0
   test 'should show tweets for Day 0' do
     post root_url, params: { day: 0 }
