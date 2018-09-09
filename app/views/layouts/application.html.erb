@@ -29,10 +29,17 @@
       }(document, "script", "twitter-wjs"));
     </script>
     
-    <h1>On The Day</h1>
-    <p>Find people who are on the same day of #100DaysOfCode</p>
-
-    <%= yield %>
-    
+    <div class="container">
+      <h1>On The Day</h1>
+      <p class="lead">Find people who are on the same day of #100DaysOfCode</p>
+  
+      <%= yield %>
+      
+      <footer>
+        <small>
+          Developed by: <a href="https://twitter.com/siideemt">@siideemt</a><br>
+        </small>
+      </footer>
+    </div>
   </body>
 </html>
