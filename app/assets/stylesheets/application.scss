@@ -14,9 +14,9 @@
  *= require_self
  */
 
-@import "bootswatch/materia/variables";
-@import "bootstrap";
-@import "bootswatch/materia/bootswatch";
+@import 'bootswatch/materia/variables';
+@import 'bootstrap';
+@import 'bootswatch/materia/bootswatch';
 
 
 body {
@@ -24,53 +24,49 @@ body {
   padding: 60px;
 }
 
-.container {
-
-}
-
 h1 {
   text-align: center;
 }
 
 .lead {
-  text-align: center;
   font-size: 1.1rem;
+  text-align: center;
 }
 
-#day_form_container {
+#day-form-container {
+  align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  padding: 2rem 0rem;
+  padding: 2rem 0;
 }
 
-#day_select_container {
-  width: 100%;
+#day-select-container {
+  align-items: center;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+#im-on {
+  min-width: 50%;
+  padding: .5rem;
   text-align: center;
 }
 
-#im_on {
-  min-width: 50%;
-  text-align: center;
-  padding: 0.5rem;
-}
-  
 #btn-search {
   // Show block level button on mobile devices
   display: block;
+  margin: .5rem 0;
   width: 100%;
-  margin: 0.5rem 0rem;
 }
 
-#search_results {
+#search-results {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 footer {
@@ -78,9 +74,9 @@ footer {
 }
 
 // Large devices (desktops, 992px and up)
-@media (min-width: 992px) { 
+@media (min-width: 992px) {
   .form-group {
-    width: 500px;
     margin: auto;
+    width: 500px;
   }
 }
