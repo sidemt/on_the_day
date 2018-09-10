@@ -39,6 +39,10 @@ gem 'jbuilder', '~> 2.5'
 gem 'rest-client', '~> 2.0.2'
 gem 'twitter', '~> 6.2.0'
 
+# Use Devise
+gem 'devise', '~> 4.5.0'
+gem 'omniauth-twitter', '~> 1.4.0'
+
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
