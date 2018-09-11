@@ -4,8 +4,9 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
-# column: value
-#
-two: {}
-# column: value
+one: 
+  email: "one-twitter@example.com"
+  provider: "twitter"
+  uid: "000000000000000000"
+  user_name: "one"
+  avatar_url: "http://example.com/image.jpg"
