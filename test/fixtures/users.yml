@@ -10,3 +10,4 @@ one:
   uid: "000000000000000000"
   user_name: "one"
   avatar_url: "http://example.com/image.jpg"
+  day: 1
