@@ -10,4 +10,9 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_select 'title', @base_title.to_s
   end
+
+  test 'should get my_page' do
+    get my_page_path
+    assert_response :success
+  end
 end

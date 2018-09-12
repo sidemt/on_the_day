@@ -5,4 +5,9 @@ class StaticPagesController < ApplicationController
       format.html
     end
   end
+
+  def my_page
+    @user = current_user
+    @day = current_user.day
+  end
 end
