@@ -14,6 +14,10 @@ AllCops:
 Rails:
   Enabled: true
   
+# Disable "Do not prefix reader method names with get_."
+Naming/AccessorMethodName:
+  Enabled: false
+
 # Disable "Use nested module/class definitions instead of compact style."
 Style/ClassAndModuleChildren:
   Enabled: false
@@ -22,10 +26,11 @@ Style/ClassAndModuleChildren:
 Style/Documentation:
   Enabled: false
 
+# Disable Layout/IndentationConsistency: Inconsistent indentation detected.
+# Allow indentation after `private` modifier keywords
+Style/IndentationConsistency:
+  EnforcedStyle: rails
+
 # Disable "Redundant return detected."
 Style/RedundantReturn:
-  Enabled: false
-
-# Disable "Do not prefix reader method names with get_."
-Naming/AccessorMethodName:
   Enabled: false
