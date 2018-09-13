@@ -41,4 +41,10 @@ class HomeTest < ActionDispatch::IntegrationTest
     get root_url
     assert_select 'a', 'Logout'
   end
+
+  # Verify the appearance of Day form
+  test 'should show Day form correctly' do
+    get root_url
+    assert_select 'input#btn-day-form[value=?]', 'Search Tweets'
+  end
 end

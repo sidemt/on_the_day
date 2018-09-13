@@ -1,0 +1,9 @@
+<!-- form for logged in user -->
+<div class="form-group">
+  <%= form_for(current_user, :id => 'day-form-container') do |f| %>
+    <%= f.select :day, options_for_select((0..100), @day), {},
+                           id: 'select-day', class: 'custom-select' %>
+    <%= f.submit yield(:day_form_btn), :id => 'btn-day-form',
+                                    :class => 'btn btn-primary' %>
+  <% end %>
+</div>

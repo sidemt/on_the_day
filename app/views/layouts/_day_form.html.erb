@@ -7,7 +7,7 @@
                            :id => 'select-day',
                            :class => 'custom-select' %>
     </div>
-    <%= submit_tag 'Search Tweets', :id => 'btn-search',
+    <%= submit_tag yield(:day_form_btn), :id => 'btn-day-form',
                                     :class => 'btn btn-primary' %>
   <% end %>
 </div>
