@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     @user = current_user
     if @user.update(user_params)
       # Success
-      flash[:success] = 'Profile updated'
+      flash[:success] = 'Updated'
       redirect_to my_page_path
     else
       # Failure

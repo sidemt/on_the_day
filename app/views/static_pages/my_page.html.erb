@@ -3,8 +3,7 @@
   <%= @user.user_name %>
 </div>
 
-<% provide(:day_form_btn, 'Change Current Day') %>
-<%= render 'layouts/user_day_form' %>
+<%= render 'layouts/my_day_form' %>
 
 <% if !@day.nil? %>
   <div>I'm on Day <%= @day.to_i %> !</div>
