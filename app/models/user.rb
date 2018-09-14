@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  before_save { self.avatar_url = https_url(avatar_url) }
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -17,5 +18,10 @@ class User < ApplicationRecord
 
     def self.dummy_email(auth)
       "#{auth.uid}-#{auth.provider}@example.com"
+    end
+
+    def https_url(url)
+      return url.gsub(/http:/, 'https:') if url.include?('http:')
+      return url
     end
 end
