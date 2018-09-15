@@ -1,9 +1,9 @@
 require 'test_helper'
 
 class StaticPagesControllerTest < ActionDispatch::IntegrationTest
-  include Warden::Test::Helpers
+  include Devise::Test::IntegrationHelpers
+
   def setup
-    Warden.test_mode!
     @user = users(:one)
     @base_title = 'On The Day'
   end
@@ -21,7 +21,7 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should get my_page when logged in' do
-    login_as(@user, scope: :user)
+    sign_in(@user, scope: :user)
     get my_page_path
     assert_response :success
   end

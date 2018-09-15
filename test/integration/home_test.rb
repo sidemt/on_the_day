@@ -1,10 +1,9 @@
 require 'test_helper'
 
 class HomeTest < ActionDispatch::IntegrationTest
-  include Warden::Test::Helpers
+  include Devise::Test::IntegrationHelpers
 
   def setup
-    Warden.test_mode!
     @user = users(:one)
   end
 
@@ -37,7 +36,7 @@ class HomeTest < ActionDispatch::IntegrationTest
 
   # Verify that logout link is shown to logged in users
   test 'should show logout link' do
-    login_as(@user, scope: :user)
+    sign_in(@user, scope: :user)
     get root_url
     assert_select 'a', 'Logout'
   end
