@@ -21,6 +21,7 @@ class User < ApplicationRecord
     end
 
     def https_url(url)
+      return url if url.nil?
       return url.gsub(/http:/, 'https:') if url.include?('http:')
       return url
     end
