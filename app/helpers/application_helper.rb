@@ -29,4 +29,14 @@ module ApplicationHelper
 
     return result['html']
   end
+
+  def normalize_msg_type(message_type)
+    if %w[notice success].include?(message_type)
+      return 'success'
+    elsif message_type == 'danger'
+      return 'danger'
+    else
+      return 'info'
+    end
+  end
 end

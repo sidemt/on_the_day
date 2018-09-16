@@ -39,55 +39,47 @@
         return t;
       }(document, "script", "twitter-wjs"));
     </script>
-    
-      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container">
-          <span class="navbar-brand">On The Day</span>
-          <button class="navbar-toggler" type="button" data-toggle="collapse"
-                  data-target="#navbarTogglerDemo03"
-                  aria-controls="navbarTogglerDemo03"
-                  aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          
-          <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-          <!-- Login Logout links-->
-          <% if user_signed_in? %>
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-              <li class="nav-item"><%= link_to 'Top', root_path, :class => 'nav-link' %></li>
-              <li class="nav-item"><%= link_to 'My Page', my_page_path, :class => 'nav-link' %></li>
-              <li class="nav-item"><%= link_to 'Logout', destroy_user_session_path, method: :delete, :class => 'nav-link' %></li>
-            </ul>
-            <span class="navbar-text">Logged in as: @<%= current_user.user_name %></span>
-          <% else %>
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-              <li class="nav-item"><%= link_to 'Twitter Login', user_twitter_omniauth_authorize_path, :class => 'nav-link' %></li>
-            </ul>
-          <% end %>
-        </div>
-      </nav>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container">
+        <span class="navbar-brand">On The Day</span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarTogglerDemo03"
+                aria-controls="navbarTogglerDemo03"
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <!-- Login Logout links-->
+        <% if user_signed_in? %>
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item"><%= link_to 'Top', root_path, :class => 'nav-link' %></li>
+            <li class="nav-item"><%= link_to 'My Page', my_page_path, :class => 'nav-link' %></li>
+            <li class="nav-item"><%= link_to 'Logout', destroy_user_session_path, method: :delete, :class => 'nav-link' %></li>
+          </ul>
+          <span class="navbar-text">Logged in as: @<%= current_user.user_name %></span>
+        <% else %>
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item"><%= link_to 'Twitter Login', user_twitter_omniauth_authorize_path, :class => 'nav-link' %></li>
+          </ul>
+        <% end %>
+      </div>
+    </nav>
 
 
     <div class="container">
 
-      <div class="notice_area">
+      <div class="notice-area">
         <!-- flash messages -->
-        <% flash.each do |message_type, message| %>
-          <div class='alert alert-<%= message_type %>'><%= message %></div>
-        <% end %>
-        <!-- flash messages for devise -->
-        <% if notice.present? %>
-          <div class="alert alert-dismissable alert-success">
-            <button type="button" class="close" data-dismiss="alert">&times;</button>
-            <p><%= notice %></p>
-          </div>
-        <% end %>
-  
-        <% if alert.present? %>
-          <div class="alert alert-dismissable alert-danger">
-            <button type="button" class="close" data-dismiss="alert">&times;</button>
-            <p><%= alert %></p>
-          </div>
+        <% if flash.present? %>
+          <% flash.each do |message_type, message| %>
+            <% message_type = normalize_msg_type(message_type) %>
+            <div class='alert alert-<%= message_type %>'>
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              <%= message %>
+            </div>
+          <% end %>
         <% end %>
       </div>
 

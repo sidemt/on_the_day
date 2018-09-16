@@ -18,14 +18,13 @@
 @import 'bootstrap';
 @import 'bootswatch/materia/bootswatch';
 
-
-body {
-  // Note: padding-top: 60px; is for Bootstrap fixed navbar
-  padding: 60px;
-}
-
 .navbar {
   margin-bottom: 2rem;
+}
+
+.notice-area {
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 // Home
