@@ -54,8 +54,9 @@
           <!-- Login Logout links-->
           <% if user_signed_in? %>
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-              <li class="nav-item"><%= link_to 'Logout', destroy_user_session_path, method: :delete, :class => 'nav-link' %></li>
+              <li class="nav-item"><%= link_to 'Top', root_path, :class => 'nav-link' %></li>
               <li class="nav-item"><%= link_to 'My Page', my_page_path, :class => 'nav-link' %></li>
+              <li class="nav-item"><%= link_to 'Logout', destroy_user_session_path, method: :delete, :class => 'nav-link' %></li>
             </ul>
             <span class="navbar-text">Logged in as: @<%= current_user.user_name %></span>
           <% else %>

@@ -1,13 +1,21 @@
-<div>
-  <%= image_tag @user.avatar_url %>
-  <%= @user.user_name %>
+<% day_num = @day.to_i %>
+
+<div class="user-info-container">
+  <div class="user_info">
+    <%= image_tag @user.avatar_url, :class => 'avatar' %>
+    <span class="user-name">@<%= @user.user_name %></span>
+  </div>
+  <div class="user_info current-day-display">
+    Day <%= day_num %>
+  </div>
+  <div class="progress">
+    <div class="progress-bar" role="progressbar" style="width: <%= day_num %>%" aria-valuenow="<%= day_num %>" aria-valuemin="0" aria-valuemax="100"></div>
+  </div>
 </div>
 
-<%= render 'layouts/my_day_form' %>
+<%= render 'layouts/next_day_btn' %>
 
-<% if !@day.nil? %>
-  <div>I'm on Day <%= @day.to_i %> !</div>
-  <div id="search-results">
-    <%= render 'layouts/tweets' %>
-  </div>
-<% end %>
+
+<%= render 'layouts/tweets' %>
+
+<%= render 'layouts/my_day_form' %>

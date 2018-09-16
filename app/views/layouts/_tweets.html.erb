@@ -1,5 +1,9 @@
-<% ids = get_tweet_id(@day) %>
-
-<% ids.each do |id| %>
-  <%= get_snippet(id).html_safe %>
+<% if !@day.nil? %>
+  <div class="search-results">
+    <% ids = get_tweet_id(@day) %>
+    
+    <% ids.each do |id| %>
+      <%= get_snippet(id).html_safe %>
+    <% end %>
+  </div>
 <% end %>

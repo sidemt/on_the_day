@@ -3,8 +3,10 @@
 
 <%= render 'layouts/day_form' %>
 
-<% if !@day.nil? %>
-  <div id="search-results">
-    <%= render 'layouts/tweets' %>
-  </div>
+
+<%= render 'layouts/tweets' %>
+
+
+<% if !user_signed_in? %>
+  <p class="text-center"><%= link_to 'Login with Twitter', user_twitter_omniauth_authorize_path %> to track your Day!</p>
 <% end %>
