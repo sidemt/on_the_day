@@ -24,5 +24,6 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     sign_in(@user, scope: :user)
     get my_page_path
     assert_response :success
+    assert_select 'title', @base_title.to_s + ' | My Page'
   end
 end
