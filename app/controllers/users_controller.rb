@@ -1,10 +1,6 @@
 class UsersController < ApplicationController
   before_action :logged_in_user
 
-  def edit
-    @user = current_user
-  end
-
   def update
     logged_in_user
     @user = current_user
