@@ -2,8 +2,7 @@ class User < ApplicationRecord
   before_save { self.avatar_url = https_url(avatar_url) }
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable, :omniauthable
+  devise :database_authenticatable, :rememberable, :validatable, :omniauthable
 
   def self.find_or_create_from_oauth(auth)
     User.find_or_create_by(provider: auth.provider, uid: auth.uid) do |user|
