@@ -11,3 +11,27 @@ one:
   user_name: "one"
   avatar_url: "http://example.com/image.jpg"
   day: 1
+
+nil: 
+  email: "nil-twitter@example.com"
+  provider: "twitter"
+  uid: "000000000000000000"
+  user_name: "nil"
+  avatar_url: "http://example.com/image.jpg"
+  # day is not set
+
+zero: 
+  email: "zero-twitter@example.com"
+  provider: "twitter"
+  uid: "000000000000000000"
+  user_name: "zero"
+  avatar_url: "http://example.com/image.jpg"
+  day: 0
+
+hundred: 
+  email: "hundred-twitter@example.com"
+  provider: "twitter"
+  uid: "000000000000000000"
+  user_name: "hundred"
+  avatar_url: "http://example.com/image.jpg"
+  day: 100
