@@ -6,14 +6,14 @@ class UsersController < ApplicationController
   end
 
   def update
+    logged_in_user
     @user = current_user
     if @user.update(user_params)
       # Success
       flash[:success] = 'Updated'
       redirect_to my_page_path
     else
-      # Failure
-      # => @user.errors.full_messages()
+      flash[:danger] = @user.errors.full_messages()
       render 'my_page'
     end
   end
