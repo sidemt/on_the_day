@@ -3,6 +3,9 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :rememberable, :validatable, :omniauthable
+  validates :day, numericality: { only_integer: true,
+                                  greater_than_or_equal_to: 0,
+                                  less_than_or_equal_to: 100 }, on: :update
 
   def self.find_or_create_from_oauth(auth)
     User.find_or_create_by(provider: auth.provider, uid: auth.uid) do |user|

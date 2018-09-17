@@ -15,4 +15,19 @@ class UserTest < ActiveSupport::TestCase
     @user.save
     assert_equal('https://example.com/image.jpg', @user.avatar_url)
   end
+
+  test 'day should be integer' do
+    @user.day = 1.5
+    assert_not @user.valid?
+  end
+
+  test 'day should be >= 0' do
+    @user.day = -1
+    assert_not @user.valid?
+  end
+
+  test 'day should be <= 100' do
+    @user.day = 101
+    assert_not @user.valid?
+  end
 end
