@@ -13,7 +13,16 @@ AllCops:
     - 'Guardfile'
 Rails:
   Enabled: true
-  
+
+# Disable Layout/IndentationConsistency: Inconsistent indentation detected.
+# Allow indentation after `private` modifier keywords
+Layout/IndentationConsistency:
+  EnforcedStyle: rails
+
+# Disable "Do not prefix reader method names with get_."
+Naming/AccessorMethodName:
+  Enabled: false
+
 # Disable "Use nested module/class definitions instead of compact style."
 Style/ClassAndModuleChildren:
   Enabled: false
@@ -24,8 +33,4 @@ Style/Documentation:
 
 # Disable "Redundant return detected."
 Style/RedundantReturn:
-  Enabled: false
-
-# Disable "Do not prefix reader method names with get_."
-Naming/AccessorMethodName:
   Enabled: false

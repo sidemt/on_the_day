@@ -1,8 +1,11 @@
 class User < ApplicationRecord
+  before_save { self.avatar_url = https_url(avatar_url) }
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable, :omniauthable
+  devise :database_authenticatable, :rememberable, :validatable, :omniauthable
+  validates :day, numericality: { only_integer: true,
+                                  greater_than_or_equal_to: 0,
+                                  less_than_or_equal_to: 100 }, on: :update
 
   def self.find_or_create_from_oauth(auth)
     User.find_or_create_by(provider: auth.provider, uid: auth.uid) do |user|
@@ -15,7 +18,13 @@ class User < ApplicationRecord
 
   private
 
-  def self.dummy_email(auth)
-    "#{auth.uid}-#{auth.provider}@example.com"
-  end
+    def self.dummy_email(auth)
+      "#{auth.uid}-#{auth.provider}@example.com"
+    end
+
+    def https_url(url)
+      return url if url.nil?
+      return url.gsub(/http:/, 'https:') if url.include?('http:')
+      return url
+    end
 end

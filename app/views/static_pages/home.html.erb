@@ -1,14 +1,12 @@
-<!-- TODO: Improve later -->
-<% if user_signed_in? %>
-  <%= image_tag current_user.avatar_url %>
-  <%= current_user.user_name %>
-  <p>I'm on Day <%= current_user.day.to_i %></p>
-<% end %>
+<h1 class="display-3">On The Day</h1>
+<p class="lead">Find people who are on the same day of #100DaysOfCode</p>
 
 <%= render 'layouts/day_form' %>
 
-<% if !@day.nil? %>
-  <div id="search-results">
-    <%= render 'layouts/tweets' %>
-  </div>
+
+<%= render 'layouts/tweets' %>
+
+
+<% if !user_signed_in? %>
+  <p class="text-center"><%= link_to 'Login with Twitter', user_twitter_omniauth_authorize_path %> to track your Day!</p>
 <% end %>

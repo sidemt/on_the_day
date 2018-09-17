@@ -18,11 +18,16 @@
 @import 'bootstrap';
 @import 'bootswatch/materia/bootswatch';
 
-
-body {
-  // Note: padding-top: 60px; is for Bootstrap fixed navbar
-  padding: 60px;
+.navbar {
+  margin-bottom: 2rem;
 }
+
+.notice-area {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+// Home
 
 h1 {
   text-align: center;
@@ -33,7 +38,39 @@ h1 {
   text-align: center;
 }
 
-#day-form-container {
+// My Page
+.user-info-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.avatar {
+  border-radius: 24px;
+  height: 48px;
+  width: 48px;
+}
+
+.user-name {
+  font-size: 1rem;
+}
+
+.current-day-display {
+  font-size: 2rem;
+  margin: 1rem;
+}
+
+.progress {
+  border-radius: 3px;
+  height: 15px;
+  max-width: 500px;
+  width: 100%;
+}
+
+// Day Form
+.day-form-container {
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -41,33 +78,48 @@ h1 {
   padding: 2rem 0;
 }
 
-#day-select-container {
+.day-select-container {
   align-items: center;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin: 1rem 0;
   text-align: center;
   width: 100%;
 }
 
-#im-on {
+.im-on {
   min-width: 50%;
   padding: .5rem;
   text-align: center;
 }
 
-#btn-search {
-  // Show block level button on mobile devices
+.btn-search {
   display: block;
   margin: .5rem 0;
   width: 100%;
 }
 
-#search-results {
+.congrats {
+  color: #e51c23; // The red used in Materia theme
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.first-time-guide {
+  font-size: 1rem;
+  text-align: center;
+}
+
+// Search Results
+
+.search-results {
   align-items: center;
   display: flex;
   flex-direction: column;
 }
+
+// Footer
 
 footer {
   text-align: center;
