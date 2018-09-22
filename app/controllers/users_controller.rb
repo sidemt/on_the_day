@@ -12,6 +12,19 @@ class UsersController < ApplicationController
     redirect_to my_page_path
   end
 
+  def count_up_day
+    @user = current_user
+    # Increase the Day
+    @user.day = @user.day.to_i + 1
+    if @user.save
+      # Success
+      flash[:success] = 'Well done!'
+    else
+      flash[:danger] = @user.errors.full_messages
+    end
+    redirect_to my_page_path
+  end
+
   private
 
     def user_params
