@@ -14,6 +14,12 @@
   </div>
 </div>
 
+<div class="user-info-container tweet-btn-area">
+  <!-- generate Tweet button with current Day -->
+  <a href="https://twitter.com/intent/tweet?button_hashtag=100DaysOfCode&ref_src=twsrc%5Etfw" class="twitter-hashtag-button" data-size="large" data-text="Day<%= day_num %>" data-show-count="false">Tweet #100DaysOfCode</a>
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
+
 <%= render 'layouts/next_day_btn' %>
 
 
