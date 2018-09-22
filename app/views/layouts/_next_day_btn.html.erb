@@ -1,11 +1,9 @@
 <!-- For users on Day 0 to 99 -->
 <% if !@day.nil? && @day.to_i < 100 %>
   <div class="form-group">
-    <%= form_for(current_user, :html => {class: 'day-form-container'}) do |f| %>
-      <%= f.hidden_field :day, :value => @day + 1 %>
-      <%= f.submit 'Proceed to Next Day', :id => 'btn-day-form',
+    <%= link_to 'Proceed to Next Day', count_up_day_path,
+                                      :id => 'btn-day-form',
                                       :class => 'btn btn-primary' %>
-    <% end %>
   </div>
 <% end %>
 
@@ -13,10 +11,8 @@
 <% if @day == 100 %>
   <p class="congrats">CONGRATULATIONS! You reached Day 100!</p>
   <div class="form-group">
-    <%= form_for(current_user, :html => {class: 'day-form-container'}) do |f| %>
-      <%= f.hidden_field :day, :value =>  1 %>
-      <%= f.submit 'Start New Round', :id => 'btn-day-form',
-                                      :class => 'btn btn-primary' %>
-    <% end %>
+    <%= link_to 'Start New Round', count_up_day_path,
+                                  :id => 'btn-day-form',
+                                  :class => 'btn btn-primary' %>
   </div>
 <% end %>

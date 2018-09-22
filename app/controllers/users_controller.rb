@@ -14,15 +14,23 @@ class UsersController < ApplicationController
 
   def count_up_day
     @user = current_user
-    # Increase the Day
-    @user.day = @user.day.to_i + 1
+    @user.day = add_day_num(@user.day)
+
     if @user.save
-      # Success
       flash[:success] = 'Well done!'
     else
       flash[:danger] = @user.errors.full_messages
     end
     redirect_to my_page_path
+  end
+
+  def add_day_num(day_num)
+    day = if day_num < 100
+            day_num + 1 # Increase the Day by 1
+          else
+            1 # Set the Day back to 1
+          end
+    return day
   end
 
   private
