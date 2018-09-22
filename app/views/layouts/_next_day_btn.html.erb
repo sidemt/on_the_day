@@ -1,6 +1,6 @@
 <!-- For users on Day 0 to 99 -->
 <% if !@day.nil? && @day.to_i < 100 %>
-  <div class="form-group">
+  <div class="day-form-container">
     <%= link_to 'Proceed to Next Day', count_up_day_path,
                                       :id => 'btn-day-form',
                                       :class => 'btn btn-primary' %>
@@ -10,7 +10,7 @@
 <!-- For users who reached Day 100 -->
 <% if @day == 100 %>
   <p class="congrats">CONGRATULATIONS! You reached Day 100!</p>
-  <div class="form-group">
+  <div class="day-form-container">
     <%= link_to 'Start New Round', count_up_day_path,
                                   :id => 'btn-day-form',
                                   :class => 'btn btn-primary' %>
