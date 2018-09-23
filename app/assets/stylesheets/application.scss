@@ -18,13 +18,28 @@
 @import 'bootstrap';
 @import 'bootswatch/materia/bootswatch';
 
+// Variables
+
+$main-red: #e51c23; // The red used in Materia theme
+
+// Mixins
+
+@mixin centering-cont {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+// Header
+
 .navbar {
   margin-bottom: 2rem;
 }
 
 .notice-area {
-  max-width: 500px;
   margin: 0 auto;
+  max-width: 500px;
 }
 
 // Home
@@ -40,10 +55,7 @@ h1 {
 
 // My Page
 .user-info-container {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  @include centering-cont;
   padding: 1rem;
 }
 
@@ -73,13 +85,20 @@ h1 {
   margin-top: 1rem;
 }
 
+.btn-group {
+  @include centering-cont;
+  margin: 1rem;
+}
+
+.btn-desc {
+  margin-bottom: .5rem;
+}
+
 // Day Form
 .day-form-container {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  @include centering-cont;
   padding: 2rem 0;
+  text-align: center;
 }
 
 .day-select-container {
@@ -105,7 +124,7 @@ h1 {
 }
 
 .congrats {
-  color: #e51c23; // The red used in Materia theme
+  color: $main-red;
   font-size: 1.2rem;
   text-align: center;
 }
@@ -118,9 +137,7 @@ h1 {
 // Search Results
 
 .search-results {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
+  @include centering-cont;
 }
 
 // Footer

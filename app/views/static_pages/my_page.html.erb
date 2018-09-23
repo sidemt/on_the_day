@@ -14,12 +14,21 @@
   </div>
 </div>
 
-<div class="user-info-container tweet-btn-area">
-  <!-- Tweet button with current Day -->
-  <a href="https://twitter.com/intent/tweet?button_hashtag=100DaysOfCode&ref_src=twsrc%5Etfw" class="twitter-hashtag-button" data-size="large" data-text="Day<%= day_num + 1 %>" data-show-count="false">Tweet #100DaysOfCode</a>
-</div>
+<div class="day-form-container tweet-btn-area">
+  
+  <%= render 'layouts/next_day_btn' %>
+  
+  <div class="btn-group">
+    <p class="text-muted btn-desc">Tweet and proceed to next Day</p>
+    <div>
+      <!-- Tweet button with current Day -->
+      <a href="https://twitter.com/intent/tweet?button_hashtag=100DaysOfCode&ref_src=twsrc%5Etfw" class="twitter-hashtag-button" data-size="large" data-text="Day<%= day_num + 1 %>" data-show-count="false">Tweet #100DaysOfCode</a>
+    </div>
+  </div>
+  
+  <p class="text-muted btn-desc">Or tweet from <a href="https://twitter.com/" target="_blank">twitter.com</a> to attach images/videos</p>
 
-<%= render 'layouts/next_day_btn' %>
+</div>
 
 <%= render 'layouts/tweets' %>
 
