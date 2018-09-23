@@ -39,4 +39,12 @@ module ApplicationHelper
       return 'info'
     end
   end
+
+  def calc_next_day(day_num)
+    if day_num >= 0 && day_num < 100
+      return day_num + 1
+    else
+      return 1
+    end
+  end
 end

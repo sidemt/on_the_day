@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :logged_in_user
+  include ApplicationHelper
 
   def update
     @user = current_user
@@ -14,7 +15,7 @@ class UsersController < ApplicationController
 
   def count_up_day
     @user = current_user
-    @user.day = add_day_num(@user.day)
+    @user.day = calc_next_day(@user.day)
 
     if @user.save
       flash[:success] = 'Well done!'
@@ -22,15 +23,6 @@ class UsersController < ApplicationController
       flash[:danger] = @user.errors.full_messages
     end
     redirect_to my_page_path
-  end
-
-  def add_day_num(day_num)
-    day = if day_num < 100
-            day_num + 1 # Increase the Day by 1
-          else
-            1 # Set the Day back to 1
-          end
-    return day
   end
 
   private
