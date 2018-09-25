@@ -9,6 +9,8 @@
   <div class="user_info current-day-display">
     Day <%= day_num %>
   </div>
+  
+  <%= render 'layouts/dots' %>
   <div class="progress">
     <div class="progress-bar" role="progressbar" style="width: <%= day_num %>%" aria-valuenow="<%= day_num %>" aria-valuemin="0" aria-valuemax="100"></div>
   </div>

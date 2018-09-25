@@ -81,8 +81,50 @@ h1 {
   width: 100%;
 }
 
-.tweet-btn-area {
-  margin-top: 1rem;
+.progress-dots {
+  padding-top: .5rem;
+  align-items: top;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 500px;
+  width: 100%;
+}
+
+.dot {
+  height: 20px;
+  width: 20px;
+  line-height: 20px;
+  font-size: 10px;
+  margin-left: -10px;
+  margin-right: -10px;
+  color: #fff;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  text-align: center;
+}
+
+// .small-dot {
+//   height: 2px;
+//   width: 2px;
+//   margin-left: -10px;
+//   margin-right: -10px;
+//   background-color: #bbb;
+//   border-radius: 50%;
+//   display: inline-block;
+// }
+
+.dot-done {
+  background-color: #2196F3 !important;
+}
+
+.triangle-down {
+	width: 0;
+	height: 0;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-top: 20px solid #555;
 }
 
 .btn-group {

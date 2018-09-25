@@ -1,0 +1,11 @@
+<% if !@day.nil? %>
+  <div class="progress-dots">
+    <% for i in 0..10 do %>
+      <% if i * 10 <= @day.to_i %>
+        <div class="dot dot-done"><%= i * 10 %></div>
+      <% else %>
+        <div class="dot"><%= i * 10 %></div>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>
