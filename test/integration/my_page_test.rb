@@ -45,6 +45,6 @@ class MyPageTest < ActionDispatch::IntegrationTest
     assert_select 'span.navbar-text', 'Logged in as: @hundred'
     assert_select '.search-results', 1
     assert_select '.congrats', 1
-    assert_select 'input#btn-day-form[value=?]', 'Start New Round'
+    assert_select 'a#btn-day-form', text: 'Start New Round'
   end
 end

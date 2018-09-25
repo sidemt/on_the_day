@@ -5,6 +5,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 
   def setup
     @user = users(:one)
+    @user_hundred = users(:hundred)
   end
 
   test 'should update when logged in' do
@@ -28,6 +29,24 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     follow_redirect!
     assert_template 'static_pages/my_page'
     assert_equal flash[:danger], ['Day must be less than or equal to 100']
+    assert_select '.current-day-display', 'Day 1'
+  end
+
+  test 'should increase the Day by 1' do
+    sign_in(@user, scope: :user)
+    get count_up_day_path
+    follow_redirect!
+    assert_template 'static_pages/my_page'
+    assert_equal flash[:success], 'Well done!'
+    assert_select '.current-day-display', 'Day 2'
+  end
+
+  test 'should go back to Day 1' do
+    sign_in(@user_hundred, scope: :user)
+    get count_up_day_path
+    follow_redirect!
+    assert_template 'static_pages/my_page'
+    assert_equal flash[:success], 'Well done!'
     assert_select '.current-day-display', 'Day 1'
   end
 end

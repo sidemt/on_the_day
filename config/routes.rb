@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   resources :users, only: [:update]
   root to: 'static_pages#home', via: [:get, :post]
   get 'my_page', to: 'static_pages#my_page'
+  get 'count_up_day', to: 'users#count_up_day'
 end
