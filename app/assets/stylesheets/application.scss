@@ -21,6 +21,9 @@
 // Variables
 
 $main-red: #e51c23; // The red used in Materia theme
+$white-text: #fff;
+$gray-dot: #bbb; // The gray used for progress dots
+$blue-dot: #2196f3; // The blue used in Materia theme
 
 // Mixins
 
@@ -74,59 +77,44 @@ h1 {
   margin: 1rem;
 }
 
-.progress {
-  border-radius: 3px;
-  height: 15px;
-  max-width: 500px;
-  width: 100%;
-}
-
 .progress-dots {
-  padding-top: .5rem;
   align-items: top;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   max-width: 700px;
+  padding-top: .5rem;
   width: 100%;
 }
 
 .dot {
-  height: 20px;
-  width: 20px;
-  line-height: 20px;
+  background-color: $gray-dot;
+  border-radius: 50%;
+  color: $white-text;
+  display: inline-block;
   font-size: 10px;
+  height: 20px;
+  line-height: 20px;
   margin-left: -10px;
   margin-right: -10px;
-  color: #fff;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
   text-align: center;
+  width: 20px;
 }
 
 .small-dot {
+  background-color: $gray-dot;
+  border-radius: 50%;
+  display: inline-block;
   height: 2px;
-  width: 2px;
   line-height: 20px;
   margin: auto;
   margin-left: -10px;
   margin-right: -10px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
+  width: 2px;
 }
 
 .dot-done {
-  background-color: #2196F3 !important;
-}
-
-.triangle-down {
-	width: 0;
-	height: 0;
-	border-left: 10px solid transparent;
-	border-right: 10px solid transparent;
-	border-top: 20px solid #555;
+  background-color: $blue-dot !important;
 }
 
 .btn-group {
