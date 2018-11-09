@@ -43,6 +43,9 @@ gem 'twitter', '~> 6.2.0'
 gem 'devise', '~> 4.5.0'
 gem 'omniauth-twitter', '~> 1.4.0'
 
+# Upgrade loofah
+gem 'loofah', '>= 2.2.3'
+
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
