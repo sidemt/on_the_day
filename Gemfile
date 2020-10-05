@@ -40,7 +40,7 @@ gem 'rest-client', '~> 2.0.2'
 gem 'twitter', '~> 6.2.0'
 
 # Use Devise
-gem 'devise', '~> 4.5.0'
+gem 'devise', '~> 4.7.1'
 gem 'omniauth-twitter', '~> 1.4.0'
 
 # Upgrade loofah
